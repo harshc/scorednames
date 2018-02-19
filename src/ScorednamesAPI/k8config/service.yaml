@@ -1,0 +1,12 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: scorednameapiservice
+  labels:
+    version: development
+spec:
+  selector:
+    app: 
+  ports:
+  - port: 8080
+  type: LoadBalancer

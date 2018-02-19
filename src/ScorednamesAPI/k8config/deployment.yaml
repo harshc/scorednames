@@ -1,0 +1,19 @@
+﻿apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: scorednaameapideployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: scorednameapi
+    spec:
+      containers:
+      - name: scorednameapi-server
+        image: harshccontainerregistry.azurecr.io/scorednameapi:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: azurecontainerreg
